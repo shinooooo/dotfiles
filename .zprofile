@@ -1,1 +1,0 @@
-/Users/shinodayousuke/.zprezto/runcoms/zprofile
