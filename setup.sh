@@ -12,4 +12,7 @@ do
   echo $f
 done
 
+ln -sfnv ~/Dotfiles/zpreztorc ~/.zpreztorc 
+ln -sfnv ~/Dotfiles/zprofile ~/.zprofile
+ln -sfnv ~/Dotfiles/zshrc ~/.zshrc
 echo "linked dotfiles complete!"

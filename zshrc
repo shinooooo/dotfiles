@@ -13,6 +13,7 @@ fi
 #terminal
 alias relogin='exec $SHELL -l'
 alias ..='cd ..'
+alias a='ls -a'
 #git
 alias g='git'
 alias gp='git push'
