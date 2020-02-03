@@ -25,6 +25,7 @@ alias gre='git restore'
 alias gc-m='git commit -m'
 alias grao='git remote add origin'
 alias gp-uo='git push -u origin'
+alias rm ds=' find . -name '.DS_Store' -type f -ls -delete'
 
 #neovim
 alias v='nvim'
