@@ -10,6 +10,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+#general
+HISTFILE=~/.zsh_history
+
 #terminal
 alias relogin='exec $SHELL -l'
 alias ..='cd ..'
