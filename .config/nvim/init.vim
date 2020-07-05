@@ -15,6 +15,7 @@ let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   call dein#load_toml('~/.config/nvim/dein.toml')
+  call dein#load_toml('~/.config/nvim/lsp.toml', {'lazy': 0}) 
   call map(dein#check_clean(), "delete(v:val, 'rf')")
   call dein#end()
   call dein#save_state()
@@ -37,6 +38,7 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
+" yankした文字をクリップボードにコピー
 set clipboard=unnamed
 
 " 見た目系
@@ -70,6 +72,8 @@ set expandtab
 set tabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=2
+" 改行時に自動インデント
+set autoindent
 
 
 " 検索系
