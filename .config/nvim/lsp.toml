@@ -21,6 +21,12 @@ hook_add = '''
 
    nnoremap [lsp]h :call LanguageClient_textDocument_hover()<CR>
    nnoremap [lsp]d :call LanguageClient_textDocument_definition()<CR>
-   nnoremap [lsp]r :call LanguageClient_textDocument_renam()<CR>
+   nnoremap [lsp]r :call LanguageClient_textDocument_rename()<CR>
    nnoremap [lsp]f :call LanguageClient_textDocument_formatting()<CR>
    '''
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rust'
+hook_add = '''
+  source ~/.config/nvim/plugins/rust.rc.vim
+'''
