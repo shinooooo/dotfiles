@@ -1,24 +1,203 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-repo = 'itchyny/lightline.vim'
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim'] 
 hook_add = '''
-    let g:lightline = {'colorscheme': 'wombat'}
+let g:context_filetype#search_offset = 100
+	let g:precious_enable_switchers = {
+	\	"vue" : {
+	\		"setfiletype" : 0
+	\	},
+	\}
 '''
 
+[[plugins]]	
+repo = "neoclide/coc.nvim"	
+merge = 0	
+rev = "release"	
+build = './install.sh nightly'	
+hook_add='source ~/.config/nvim/coc-options.vim'
 
-[[plugins]] #補完
-repo = 'neoclide/coc.nvim'
-rev = 'release'
-on_i = 1
-merged = '0'
-hook_source = 'call coil398#init#coc#hook_source()'
-
-[[plugins]]# ファイルみやすくなる
-repo = 'scrooloose/nerdtree'
+# [[plugins]]
+# repo = 'neovim/nvim-lsp'
+# hook_add = '''
+# nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+# nnoremap <silent> gd    <cmd>lua vim.lsp.buf.implementation()<CR>
+# nnoremap <silent> <c-K> <cmd>lua vim.lsp.buf.signature_help()<CR>
+# nnoremap <silent> gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+# '''
 
 [[plugins]]
-repo = 'jistr/vim-nerdtree-tabs'
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]] 
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
 
 [[plugins]]
-repo = 'Xuyuanp/nerdtree-git-plugin'
+repo = 'christoomey/vim-tmux-navigator'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+let g:lightline = {
+      \ 'component_function': {
+      \   'filename': 'LightlineFilename',
+      \ },
+      \ 'colorscheme': 'rigel'
+      \ }
+
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
+'''
+
+[[plugins]]
+repo = 'Rigellute/rigel'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'vim-scripts/YankRing.vim'
+
+[[plugins]]
+repo = 'machakann/vim-highlightedyank'
+hook_add = '''
+let g:highlightedyank_highlight_duration = 200
+'''
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+nmap <Space>s <Plug>(easymotion-s2)
+nmap <Space>w <Plug>(easymotion-overwin-w)
+nmap <Space>j <Plug>(easymotion-j)
+nmap <Space>k <Plug>(easymotion-k)
+'''
+
+[[plugins]]
+repo = 'liuchengxu/vim-clap'
+hook_add = '''
+let g:clap_enable_icon = 1
+let g:clap_insert_mode_only = v:true
+nnoremap <silent><Space>cf 
+\ :<C-u>Clap files<CR>
+nnoremap <silent><Space>cg 
+\ :<C-u>Clap grep<CR>
+nnoremap <silent><Space>cb 
+\ :<C-u>Clap buffers<CR>
+'''
+
+[[plugins]]
+repo = 'chrisbra/Colorizer'
+
+[[plugins]]
+repo = 'thinca/vim-zenspace'
+hook_add = '''
+let g:zenspace#default_mode = 'on'
+'''
+
+# git ====================================
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = "airblade/vim-gitgutter"
+hook_add = '''
+nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
+'''
+
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+hook_add = '''
+nnoremap <silent><space>gs :<C-u>Gina status --opener="botright split"<CR>
+nnoremap <silent><space>ct :<C-u>Gina commit<CR>
+call gina#custom#command#alias('status', 'st')
+call gina#custom#command#alias('commit', 'ct')
+'''
+
+# ========================================
+
+# visual mode plugins ====================
+[[plugins]]
+repo = 'terryma/vim-expand-region'
+hook_add = '''
+let g:expand_region_text_objects = {
+      \ 'iw'  :0,
+      \ 'iW'  :0,
+      \ 'i"'  :0,
+      \ 'i]'  :1, 
+      \ 'ib'  :1,
+      \ 'iB'  :1,
+      \ 'il'  :0,
+      \ 'ip'  :0,
+      \ 'ie'  :0,
+      \ }
+vmap K <Plug>(expand_region_expand)
+vmap J <Plug>(expand_region_shrink)
+'''
+
+[[plugins]] 
+repo = 'kana/vim-textobj-user'
+[[plugins]] 
+repo = 'kana/vim-textobj-line'
+[[plugins]]
+repo = 'kana/vim-textobj-entire'
+
+[[plugins]]
+repo = 'machakann/vim-sandwich'
+# ========================================
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+marge = 0
+
+[[plugins]]
+repo = 'tyru/columnskip.vim'
+hook_add = '''
+nmap sj <Plug>(columnskip:nonblank:next)
+omap sj <Plug>(columnskip:nonblank:next)
+xmap sj <Plug>(columnskip:nonblank:next)
+nmap sk <Plug>(columnskip:nonblank:prev)
+omap sk <Plug>(columnskip:nonblank:prev)
+xmap sk <Plug>(columnskip:nonblank:prev)
+'''
+
+[[plugins]]	
+repo = 'cocopon/vaffle.vim'	
+hook_add = '''	
+nnoremap <silent> <Space>f  :<C-u>Vaffle<CR>	
+  function! VaffleRenderCustomIcon(item)	
+    return WebDevIconsGetFileTypeSymbol(a:item.basename, a:item.is_dir)	
+  endfunction	
+  let g:vaffle_render_custom_icon = 'VaffleRenderCustomIcon'	
+let g:vaffle_show_hidden_files = 1	
+let g:vaffle_auto_cd = 1
+let g:vaffle_force_delete = 1
+'''	
+
+[[plugins]]
+repo = 'zefei/vim-wintabs'
+hook_add = '''
+nmap <C-t><C-l> <plug>(wintabs_next)
+nmap <C-t><C-h> <plug>(wintabs_previous)
+nmap <C-t><C-p> <plug>(wintabs_close)
+'''

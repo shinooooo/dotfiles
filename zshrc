@@ -31,3 +31,5 @@ alias gp-uo='git push -u origin'
 
 #neovim
 alias v='nvim'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

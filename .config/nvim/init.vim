@@ -16,6 +16,7 @@ if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   call dein#load_toml('~/.config/nvim/dein.toml')
   call dein#load_toml('~/.config/nvim/lsp.toml', {'lazy': 0}) 
+  call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
   call map(dein#check_clean(), "delete(v:val, 'rf')")
   call dein#end()
   call dein#save_state()
@@ -24,6 +25,17 @@ endif
 if dein#check_install()
   call dein#install()
 endif
+
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins)>0
+  call map(s:removed_plugins, "delete(v:val, 'rf')")
+  call dein#recache_runtimepath()
+endif
+
+" pythonのパス設定
+let g:python_host_prog = expand('/usr/bin/python2')
+
+let g:python3_host_prog = expand('/usr/local/bin/python3')
 
 " setting 
 "文字コードをUFT-8に設定
@@ -62,6 +74,12 @@ nnoremap k gk
 " シンタックスハイライトの有効化
 syntax enable
 
+" 色
+set termguicolors
+syntax enable 
+colorscheme rigel 
+set pumblend=15
+set t_Co=256
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
@@ -89,4 +107,3 @@ set wrapscan
 set hlsearch
 " ESCでハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-map <C-b> <plug>NERDTreeTabsToggle<CR>
