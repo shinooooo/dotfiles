@@ -1,6 +1,24 @@
+# rust
 [[plugins]]
 repo = 'rust-lang/rust.vim'
 on_ft = 'rust'
 hook_add = '''
   source ~/.config/nvim/plugins/rust.rc.vim
 '''
+
+#typescript
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript','tsx']
+
+[[plugins]]
+repo = 'peitalin/vim-jsx-typescript'
+on_ft = ['typescript','tsx']
+
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+on_ft = ['typescript','tsx']
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = ['typescript','tsx']
