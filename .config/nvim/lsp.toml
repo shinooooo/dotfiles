@@ -6,6 +6,11 @@ hook_add = '''
   source ~/.config/nvim/plugins/rust.rc.vim
 '''
 
+# HTML&CSS
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html','css','jsx','tsx','javascriptreact','typescriptreact']
+
 #typescript
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
