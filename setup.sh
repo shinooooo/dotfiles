@@ -15,4 +15,5 @@ done
 ln -sfnv ~/Dotfiles/zpreztorc ~/.zpreztorc 
 ln -sfnv ~/Dotfiles/zprofile ~/.zprofile
 ln -sfnv ~/Dotfiles/zshrc ~/.zshrc
+ln -sfnv ~/Dotfiles/gitignore_global ~/.gitignore_global
 echo "linked dotfiles complete!"
