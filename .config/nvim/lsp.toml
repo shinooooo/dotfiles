@@ -1,4 +1,4 @@
-# rust
+# Rust
 [[plugins]]
 repo = 'rust-lang/rust.vim'
 on_ft = 'rust'
@@ -11,7 +11,7 @@ hook_add = '''
 repo = 'mattn/emmet-vim'
 on_ft = ['html','css','jsx','tsx','javascriptreact','typescriptreact']
 
-#typescript
+# TypeScript
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
 on_ft = ['typescript','tsx']
@@ -27,3 +27,7 @@ on_ft = ['typescript','tsx']
 [[plugins]]
 repo = 'othree/yajs.vim'
 on_ft = ['typescript','tsx']
+
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = 'python'
