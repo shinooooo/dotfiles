@@ -27,7 +27,3 @@ on_ft = ['typescript','tsx']
 [[plugins]]
 repo = 'othree/yajs.vim'
 on_ft = ['typescript','tsx']
-
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
-on_ft = 'python'
