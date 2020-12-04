@@ -49,3 +49,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# llvm path
+export PATH="/usr/local/opt/llvm/bin:$PATH"
