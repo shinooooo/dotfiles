@@ -1,11 +1,4 @@
 #
-# Executes commands at login pre-zshrc.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
-#
 # Browser
 #
 
@@ -68,3 +61,23 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Go Path
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+# rbenv
+eval "$(rbenv init -)"
+
+# conda
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/shinooooo/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/shinooooo/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/shinooooo/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/shinooooo/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+# llvm
+export PATH="/usr/local/opt/llvm/bin:$PATH"
