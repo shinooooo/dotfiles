@@ -2,18 +2,15 @@ set -u
 
 echo "link home directory dotfiles"
 
-for f in .??*
-do
-  [[ "$f" == ".git" ]] && continue
-  [[ "$f" == ".DS_Store" ]] && continue
-  [[ "$f" == ".gitignore" ]] && continue
+dotfiles_dir=$HOME/dotfiles
+config_dir=$HOME/.config
 
-  ln -sfnv ~/Dotfiles/$f ~/$f 
-  echo $f
-done
+ln -sfnv $dotfiles_dir/.config/alacritty  $config_dir/alacritty
+ln -sfnv $dotfiles_dir/.config/fish $config_dir/fish
+ln -sfnv $dotfiles_dir/.config/nvim $config_dir/nvim
 
-ln -sfnv ~/Dotfiles/zpreztorc ~/.zpreztorc 
-ln -sfnv ~/Dotfiles/zprofile ~/.zprofile
-ln -sfnv ~/Dotfiles/zshrc ~/.zshrc
-ln -sfnv ~/Dotfiles/gitignore_global ~/.gitignore_global
+ln -sfnv $dotfiles_dir/zpreztorc ~/.zpreztorc 
+ln -sfnv $dotfiles_dir/zprofile ~/.zprofile
+ln -sfnv $dotfiles_dir/zshrc ~/.zshrc
+ln -sfnv $dotfiles_dir/gitignore_global ~/.gitignore_global
 echo "linked dotfiles complete!"

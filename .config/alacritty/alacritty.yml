@@ -1,0 +1,12 @@
+window:
+  decorations: full
+  startup_mode: Simplefullscreen
+
+shell:
+ # program: /bin/zsh
+ program: /usr/local/bin/fish
+ args:
+   - --login
+
+font:
+  size: 16
