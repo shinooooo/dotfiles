@@ -9,4 +9,10 @@ shell:
    - --login
 
 font:
-  size: 16
+  size: 18
+  normal:
+    family: agave Nerd Font
+  bold:
+    family: agave Nerd Font
+  iterlic:
+    family: agave Nerd Font
