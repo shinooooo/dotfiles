@@ -12,7 +12,7 @@ fi
 
 export EDITOR='nvim'
 export VISUAL='nvim'
-export PAGER='less'
+export PAGER='nvim'
 
 #
 # Language

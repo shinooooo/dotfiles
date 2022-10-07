@@ -9,7 +9,7 @@ hook_add = '''
 # HTML&CSS
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ['html','css','jsx','tsx','javascriptreact','typescriptreact']
+on_ft = ['html','css','javascript','jsx','tsx','javascriptreact','typescriptreact']
 
 # TypeScript
 [[plugins]]

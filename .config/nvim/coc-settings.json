@@ -16,7 +16,7 @@
       "filetypes": ["c", "cpp", "objc", "objcpp"]
     }
   },
-  "clangd.path": "/Users/shinodayousuke/Dotfiles/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
+  "clangd.path": "/Users/shinooooo/Dotfiles/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
   "eslint.autoFixOnSave": true,
   "eslint.filetypes": [
     "javascript",
